@@ -1,0 +1,11 @@
+#email{
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.btn{
+  color: white;
+  font-weight: bold;
+}

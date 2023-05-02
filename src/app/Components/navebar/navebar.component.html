@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+    <a class="navbar-brand" routerLinkActive="active" routerLink="home">
+      <img src="../../../assets/freshcart-logo.svg" alt="freshcart-logo">
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="home" [hidden]="!login">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="products" [hidden]="!login">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="categories" [hidden]="!login">Categories </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="brands" [hidden]="!login">Brands </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li class="nav-item d-flex align-items-center">
+          <i class="fab mx-2 fa-facebook"></i>
+          <i class="fab mx-2 fa-instagram"></i>
+          <i class="fab mx-2 fa-tiktok"></i>
+          <i class="fab mx-2 fa-twitter"></i>
+          <i class="fab mx-2 fa-linkedin"></i>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="login" [hidden]="login">Login </a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link cursor-pointer" [hidden]="!login" (click)="logout()">LogOut </span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="register" [hidden]="login">Register</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link cart" routerLinkActive="active" routerLink="cart" [hidden]="!login"><i class="fa-solid text-main fa-cart-shopping"></i>
+          <span class="count" *ngIf="count != 0">{{count}}</span>
+        </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

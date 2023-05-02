@@ -1,0 +1,23 @@
+.count{
+    font-size: 12px;
+    transform: translateY(-45%);
+    padding: 5px;
+    color: rgba(153, 0, 120, 0.993);
+    font-weight: bold;
+}
+
+.cart{
+  display: flex;
+    justify-content: space-between;
+}
+
+
+.fa-cart-shopping{
+  align-self: center;
+}
+
+/* .navbar{
+  position: fixed;
+  z-index: 22;
+  width: 100%;
+} */

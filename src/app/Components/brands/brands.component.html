@@ -1,0 +1,6 @@
+<div class="row my-5 mx-2 justify-content-center align-items-center">
+  <div class="brand col-md-3 col-sm-4 m-2" *ngFor="let brand of allBrands">
+    <img class= "w-100" [src]="brand.image" alt="" height="200" width="200">
+    <h6 class="h3 fw-bold m-3 text-main">{{brand.name}}</h6>
+  </div>
+</div>

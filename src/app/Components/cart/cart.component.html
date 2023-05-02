@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-end align-items-end m-3">
+    <button class="btn btn-danger fw-bold " (click)="clear()">Clear All</button>
+  </div>
+
+  <div class="row my-5 mx-3 g-3">
+    <div class="row my-3" *ngFor="let item of cart">
+      <div class="col-md-3">
+        <img class="w-100" [src]="item.imageCover" alt="" >
+      </div>
+      <div class="col-md-9 d-flex align-items-center justify-content-between g-4">
+        <div class="text px-3">
+          <h4 class="fw-bold">{{item.title}}</h4>
+          <h4 class="h6 text-main">{{item.category.name}}</h4>
+          <h6>{{item.description}}</h6>
+          <p class="fw-bold">{{item.price}} EGP</p>
+          <button class="btn text-danger d-block m-3 align-items-center fw-bold" (click)="remove(item.id)">
+            <i class="fa-solid fa-trash"></i>
+            Remove
+          </button>
+        </div>
+        <div class="quantity d-flex justify-content-between align-items-center">
+          <button class="btn btn-outline-danger fw-bold" [disabled]="count <= 1" (click)="min()">-</button>
+          <span class="px-3">{{count}}</span>
+          <button class="btn btn-outline-success fw-bold" (click)="add()">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+
+    <div class="row align-items-center g-5 py-4">
+      <div class="col-md-4 col-sm-12">
+
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let slide of productDetails.images">
+            <ng-template carouselSlide>
+              <img class="w-100" [src]="slide" alt="">
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <h1>{{productDetails?.title}}</h1>
+        <h5 class="mb-3 text-main fw-bold">{{productDetails?.brand?.name}}</h5>
+        <p class="mb-4">{{productDetails?.description}}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <h6>{{productDetails?.price}} EGP</h6>
+          <div class="rate">
+            <i class="fa-solid fa-star" style="color: goldenrod;"></i>
+            <span class="mt-0 mb-0">{{productDetails?.ratingsAverage}}</span>
+          </div>
+        </div>
+        <button class="btn btn-primary d-block w-100 mt-3">+ add</button>
+      </div>
+    </div>
+</div>
+

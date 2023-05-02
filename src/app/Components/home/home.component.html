@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <app-slider></app-slider>
+    <app-gategory-slider class="mt-5"></app-gategory-slider>
+    <div class="row align-items-center g-4">
+      <h2>Shop Popular Categories</h2>
+      <input class="m-3" type="text" id="search" placeholder="Search" [(ngModel)]="searchItem">
+      <div class=" product col-lg-2 col-md-4 col-sm-6" *ngFor="let prod of allProducts |filter:searchItem ,let index = index">
+        <div class=" px-2 py-4 cursor-pointer" (click)="getSpecificProduct(prod._id)">
+          <img class="w-100" [src]="prod.imageCover" alt="">
+          <div class="text">
+            <h5 class="h6 text-main">{{prod.category.name}}</h5>
+            <h6 class="fw-bolder">{{prod.title.split(' ').slice(0,2).join(" ")}}</h6>
+          </div>
+          <div class="price-rate d-flex justify-content-between">
+            <p class="price mt-0 mb-0">{{prod.price}} EGP</p>
+            <div class="rate d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-star"></i>
+              <p class="mt-0 mb-0">{{prod.ratingsAverage}}</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn bg-main text-white w-100 my-1" (click)="addToCard(prod._id)">+add</button>
+      </div>
+    </div>
+  </div>
+<!-- Spiner -->
+<div class="spinner" *ngIf="spinner">
+  <div class="lds-circle"><div></div></div>
+</div>
+
+</div>
